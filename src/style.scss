@@ -1,2 +1,94 @@
-@import '_component/layout/general';
-@import '_component/intro/intro';
+@import 'font';
+
+// reset everything, even the Big Bang
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+// set the resolution to match OBS scene
+.screen {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+}
+
+.lower-third {
+  position: absolute;
+  bottom: 14rem;
+  left: 12rem;
+
+  &__background {
+    background-color: rgb(213, 32, 39);
+    background: linear-gradient(
+      to right,
+      // cum facem noi bum bum bum
+      // 100, 98, 97, 94, 93, 89, 88
+      rgba(213, 32, 39, 0.75) 0%,
+      rgba(213, 32, 39, 0.9) 88%,
+
+      rgba(213, 32, 39, 0) 88%,
+      rgba(213, 32, 39, 0) 89%,
+
+      rgba(213, 32, 39, 0.85) 89%,
+      rgba(213, 32, 39, 0.85) 93%,
+
+      rgba(213, 32, 39, 0) 93%,
+      rgba(213, 32, 39, 0) 94%,
+
+      rgba(213, 32, 39, 0.8) 94%,
+      rgba(213, 32, 39, 0.8) 97%,
+
+      rgba(213, 32, 39, 0) 97%,
+      rgba(213, 32, 39, 0) 98%,
+
+      rgba(213, 32, 39, 0.75) 98%,
+      rgba(213, 32, 39, 0.75) 100%
+    );
+    width: 750px;
+    height: 180px;
+    position: absolute;
+    transform: skewX(-25deg);
+  }
+
+  &__job-description,
+  &__title {
+    position: absolute;
+    color: white;
+    white-space: nowrap;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    top: 1rem;
+    left: 5rem;
+    padding: 0.75rem 2.5rem;
+    position: relative;
+
+    &::after {
+      color: white;
+      content: attr(data-name);
+      position: relative;
+    }
+
+    &::before {
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 1);
+      transform: skewX(-25deg);
+    }
+  }
+
+  &__job-description {
+    font-size: 2.5rem;
+    top: 7rem;
+    left: 3rem;
+    // 247BA0
+  }
+}

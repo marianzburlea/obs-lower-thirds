@@ -1,4 +1,13 @@
-extends _component/layout/base
-
-block awesome-content
-  include _component/intro/intro
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title OBS Lower Thirds
+  body
+    .screen
+      .lower-third
+        .lower-third__background
+        .lower-third__title(data-name="Marian Zburlea")
+        .lower-third__job-description Senior Web Developer
+    link(rel="stylesheet", href=`${baseUrl}style.css`)
